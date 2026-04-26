@@ -33,4 +33,4 @@ jobs:
       env:
         PYTHONPATH: . # Isto garante que o servidor encontra a pasta 'dominio'
       run: |
-        python -m unittest discover -s testes/teste_unitario -p "test_*.py"
+        python -m unittest discover -s testes -p "test_*.py"
