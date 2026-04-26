@@ -22,10 +22,7 @@ class TestServicoTransferencia(unittest.TestCase):
         conta_origem = Conta(numero=1, cliente=cliente_dummy, saldo_inicial=100.0)
         conta_destino = Conta(numero=2, cliente=cliente_dummy, saldo_inicial=0.0)
 
-        servico = ServicoTransferencia(
-            validador_fraude=stub_validador,
-            notificador=mock_notificador
-        )
+        servico = ServicoTransferencia(validador_fraude=stub_validador, notificador=mock_notificador)
 
         # Act
         resultado = servico.transferir(conta_origem, conta_destino, 50.0)
