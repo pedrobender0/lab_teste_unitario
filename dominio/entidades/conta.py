@@ -27,3 +27,11 @@ class Conta:
             self.saldo_poupanca += valor
             return True
         return False
+
+    def aplicar_rendimento_poupanca(self):
+        """MÉTODO FOI CRIADO DEPOIS QUE O TESTE FALHOU NO EXERCÍCIO DE TDD, ASSIM INDO PARA A FASE GREEN."""
+        if self.saldo_poupanca > 0:
+            rendimento = self.saldo_poupanca * 0.005
+            self.saldo_poupanca += rendimento
+            return True
+        return False
