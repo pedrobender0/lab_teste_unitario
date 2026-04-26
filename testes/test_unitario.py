@@ -3,7 +3,7 @@ from unittest.mock import Mock
 from dominio.entidades.conta import Conta
 
 class TestUnitario(unittest.TestCase):
-
+#EXERCÍCIO 7.1 - TESTE UNITÁRIO
     def test_investir_poupanca(self):
         # Arrange
         conta = Conta(numero=123, cliente="Pedro", saldo_inicial=100.0)
@@ -17,12 +17,13 @@ class TestUnitario(unittest.TestCase):
         self.assertEqual(conta.saldo, 60.0)
         self.assertEqual(conta.saldo_poupanca, 40.0)
 
+#EXERCÍCIO 7.5 - TDD
+
     def test_aplicar_rendimento_poupanca_deve_aumentar_saldo_em_meio_porcento(self):
         # Arrange
         cliente_mock = Mock()
         conta = Conta(numero=123, cliente=cliente_mock)
 
-        # Simulamos que a poupança já tem R$ 1000,00
         conta.saldo_poupanca = 1000.0
 
         # Act
