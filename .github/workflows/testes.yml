@@ -1,0 +1,36 @@
+name: Executar Testes Unitários
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Faz o checkout do código do teu repositório
+    - name: Checkout do código
+      uses: actions/checkout@v3
+
+    # 2. Configura o ambiente Python no servidor do GitHub
+    - name: Configurar o Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.14'
+
+    # 3. Prepara o ambiente (instala o pip)
+    - name: Instalar dependências
+      run: |
+        python -m pip install --upgrade pip
+        # Se tiveres um requirements.txt, remove o '#' da linha abaixo:
+        # pip install -r requirements.txt
+
+    # 4. Executa os testes apontando para a tua pasta correta
+    - name: Executar os testes com Unittest
+      env:
+        PYTHONPATH: . # Isto garante que o servidor encontra a pasta 'dominio'
+      run: |
+        python -m unittest discover -s testes/teste_unitario -p "test_*.py"
