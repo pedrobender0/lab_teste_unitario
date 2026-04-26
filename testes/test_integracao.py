@@ -1,4 +1,4 @@
-import pytest
+import unittest
 import os
 from infraestrutura.arquivo_conta_repository import ArquivoContaRepository
 from aplicacao.realizar_saque_use_case import RealizarSaqueUseCase
@@ -34,3 +34,6 @@ def test_integracao_saque_e_salvamento_no_arquivo():
     # Limpeza do arquivo temporário no final do teste
     if os.path.exists(repositorio.arquivo):
         os.remove(repositorio.arquivo)
+
+if __name__ == '__main__':
+    unittest.main()

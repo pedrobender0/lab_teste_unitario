@@ -1,4 +1,4 @@
-import pytest
+import unittest
 from dominio.entidades.conta import Conta
 from dominio.entidades.cliente import Cliente
 
@@ -30,3 +30,6 @@ def test_investimento_poupanca_com_sucesso():
     assert resultado == True
     assert conta.saldo == 300.0          
     assert conta.saldo_poupanca == 200.0
+
+if __name__ == '__main__':
+    unittest.main()

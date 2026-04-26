@@ -1,4 +1,4 @@
-import pytest
+import unittest
 import os
 import tkinter as tk
 from unittest.mock import patch
@@ -55,3 +55,6 @@ def test_fluxo_funcional_saque_via_interface():
     root.destroy()
     if os.path.exists(repositorio.arquivo):
         os.remove(repositorio.arquivo)
+
+if __name__ == '__main__':
+    unittest.main()
